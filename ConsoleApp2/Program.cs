@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace ConsoleApp2
 {
@@ -8,37 +9,17 @@ namespace ConsoleApp2
       
         static void Main(string[] args)
         {
-            
+
             testAPlusBSquare(new MyFrac(1, 3), new MyFrac(1, 6));
             testAPlusBSquare(new MyComplex(1, 3), new MyComplex(1, 6));
 
             testSquaresDifference(new MyFrac(1, 3), new MyFrac(1, 6));
             testSquaresDifference(new MyComplex(1, 3), new MyComplex(1, 6));
 
-            List<MyFrac> fractions = new List<MyFrac>
-            {
-                new MyFrac(1, 2),
-                new MyFrac(3, 4),
-                new MyFrac(1, 3),
-                new MyFrac(5, 6),
-                new MyFrac(2, 3)
-            };
-
-            Console.WriteLine("Before sorting:");
-            foreach (var frac in fractions)
-            {
-                Console.WriteLine(frac);
-            }
-            fractions.Sort();
-            Console.WriteLine("\nAfter sorting:");
-            foreach (var frac in fractions)
-            {
-                Console.WriteLine(frac);
-            }
-            /*Console.WriteLine("Enter the first argument");
+            Console.WriteLine("Введіть перший операнд:");
             string arg1 = Console.ReadLine();
 
-            Console.WriteLine("Enter the second argument");
+            Console.WriteLine("Введіть другий операнд:");
             string arg2 = Console.ReadLine();
 
             object obj1 = ParseOperand(arg1);
@@ -46,14 +27,18 @@ namespace ConsoleApp2
 
             if (obj1 != null && obj2 != null)
             {
-                object result = ChoiceOperations(obj1, obj2);
-               // Console.WriteLine(result.ToString());
-
                 
-
-                *//* Console.WriteLine(obg1.ToString());
-                 Console.WriteLine(obg2.ToString());*//*
-            }*/
+                object result = ChoiceOperations(obj1, obj2);
+                if (result != null)
+                {
+                    Console.WriteLine("Результат :");
+                    Console.WriteLine(result.ToString());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Помилка: один або обидва операнди не були розпізнані.");
+            }
             Console.ReadKey();
 
         }
@@ -61,76 +46,98 @@ namespace ConsoleApp2
       
         static object ParseOperand(string operand)
         {
-            if (operand.Contains("i"))
+            try
             {
-                MyComplex complex = new MyComplex();
-                complex.ParseComplex(operand);
-                return complex;
-            }
-            else if (operand.Contains("/"))
-            {
-                MyFrac frac = new MyFrac();
-                frac.ParseFraction(operand);
-                return frac;
-            }
-
-            else
-            {
-
-                if (int.TryParse(operand, out int result))
+                if (operand.Contains("i"))
                 {
-                    MyFrac frac = new MyFrac(result, 1);
-                    return frac;
+                    MyComplex complex = new MyComplex();
+                    complex.ParseComplex(operand);
+                    return complex;
+                }
+                else if (operand.Contains("/"))
+                {
+                    string[] parts = operand.Split('/');
+                    if (parts.Length != 2)
+                        throw new FormatException("Дробовий формат повинен бути чисельник/знаменник.");
+
+                    BigInteger numerator = BigInteger.Parse(parts[0]);
+                    BigInteger denominator = BigInteger.Parse(parts[1]);
+
+                    if (numerator > int.MaxValue || numerator < int.MinValue ||
+                        denominator > int.MaxValue || denominator < int.MinValue)
+                    {
+                        return new MyFrac(numerator, denominator); // Використання BigInteger
+                    }
+                    else
+                    {
+                        return new MyFrac((int)numerator, (int)denominator); // Використання Int32
+                    }
+                }
+                else if (BigInteger.TryParse(operand, out BigInteger bigValue))
+                {
+                    if (bigValue > int.MaxValue || bigValue < int.MinValue)
+                    {
+                        return new MyFrac(bigValue, 1);
+                    }
+                    else
+                    {
+                        return new MyFrac((int)bigValue, 1); 
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Not Correct");
+                    Console.WriteLine($"Помилка: неможливо розпізнати операнд \"{operand}\".");
                     return null;
                 }
             }
-
-
-
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Помилка при розборі операнда: {ex.Message}");
+                return null;
+            }
         }
         static object ChoiceOperations(object obj1, object obj2)
         {
             Console.WriteLine();
+            Console.WriteLine("Enter operator:");
             char choice = Console.ReadKey().KeyChar;
             Console.WriteLine();
 
-            if (obj1 is MyFrac && obj2 is MyFrac)
+            try
             {
-                MyFrac frac_1 = (MyFrac)obj1;
-                MyFrac frac_2 = (MyFrac)obj2;
-
-                switch (choice)
+                if (obj1 is MyFrac frac1 && obj2 is MyFrac frac2)
                 {
-                    case '+': return frac_1.Add(frac_2);
-                    case '-': return frac_1.Subtract(frac_2);
-                    case '*': return frac_1.Multiply(frac_2);
-                    case '/': return frac_1.Divide(frac_2);
-                    default: throw new Exception($"Невідомий оператор: {choice}");
+                    switch (choice)
+                    {
+                        case '+': return frac1.Add(frac2);
+                        case '-': return frac1.Subtract(frac2);
+                        case '*': return frac1.Multiply(frac2);
+                        case '/': return frac1.Divide(frac2);
+                        default: throw new Exception($"Невідомий оператор: {choice}");
+                    }
+                }
+                else if (obj1 is MyComplex complex1 && obj2 is MyComplex complex2)
+                {
+                    switch (choice)
+                    {
+                        case '+': return complex1.Add(complex2);
+                        case '-': return complex1.Subtract(complex2);
+                        case '*': return complex1.Multiply(complex2);
+                        case '/': return complex1.Divide(complex2);
+                        default: throw new Exception($"Невідомий оператор: {choice}");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Непідтримувані типи операндів. Обидва операнди мають бути одного типу.");
                 }
             }
-            else if (obj1 is MyComplex && obj2 is MyComplex)
+            catch (Exception ex)
             {
-                MyComplex complex_1 = (MyComplex)obj1;
-                MyComplex complex_2 = (MyComplex)obj2;
-                switch (choice)
-                {
-                    case '+': return complex_1.Add(complex_2);
-                    case '-': return complex_1.Subtract(complex_2);
-                    case '*': return complex_1.Multiply(complex_2);
-                    case '/': return complex_1.Divide(complex_2);
-                    default: throw new Exception($"Невідомий оператор: {choice}");
-
-                }
-
+                Console.WriteLine($"Помилка: {ex.Message}");
+                return null;
             }
-            else
-            {
-                throw new Exception("Непідтримувані типи операндів.");
-            }
+
 
         }
     }

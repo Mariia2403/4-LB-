@@ -6,74 +6,145 @@ using System.Numerics;
 
 namespace ConsoleApp2
 {
-   public class MyFrac : IMyNumber<MyFrac>, IComparable<MyFrac>
+    public class MyFrac : IMyNumber<MyFrac>, IComparable<MyFrac>
     {
         public int Nom { get; set; }
         public int Denom { get; set; }
 
         public BigInteger Nom_big { get; set; }
         public BigInteger Denom_big { get; set; }
+        private bool IsBigInteger { get; set; }
 
-        public MyFrac()
+       /* public MyFrac()
         {
             Nom = 0;
             Denom = 1;
+        }*/
+        public MyFrac()
+        {
+            Nom_big = 0;
+            Denom_big = 1;
         }
 
         public MyFrac(int nom, int denom)
         {
             if (denom == 0)
-                throw new DivideByZeroException("Знаменник не може бути нулем.");
+                throw new 
+                    DivideByZeroException("Знаменник не може бути нулем.");
             Nom = nom;
             Denom = denom;
             Reduce();
         }
-        public MyFrac(BigInteger nom, BigInteger denom, BigInteger bigInteger)
+        public MyFrac(BigInteger nom, BigInteger denom)
         {
             if (denom == 0)
                 throw new DivideByZeroException("Знаменник не може бути нулем.");
 
             Nom_big = nom;
             Denom_big = denom;
+            IsBigInteger = true;
 
         }
-
+        private void CheckAndConvertToBigInteger()
+        {
+            if (Math.Abs((long)Nom) > int.MaxValue || Math.Abs((long)Denom) > int.MaxValue)
+            {
+                Nom_big = new BigInteger(Nom);
+                Denom_big = new BigInteger(Denom);
+                IsBigInteger = true;
+            }
+        }
         public MyFrac Add(MyFrac that)
         {
-            int newNom = this.Nom * that.Denom + that.Nom * this.Denom;
-            int newDenom = this.Denom * that.Denom;
-            
-            return new MyFrac(newNom, newDenom);
+            if (this.IsBigInteger || that.IsBigInteger)
+            {
+                BigInteger newNom = this.GetBigNom() * that.GetBigDenom() + that.GetBigNom() * this.GetBigDenom();
+                BigInteger newDenom = this.GetBigDenom() * that.GetBigDenom();
+                return new MyFrac(newNom, newDenom);
+            }
+            else
+            {
+                int newNom = this.Nom * that.Denom + that.Nom * this.Denom;
+                int newDenom = this.Denom * that.Denom;
+                return new MyFrac(newNom, newDenom);
+            }
         }
 
         public MyFrac Divide(MyFrac that)
         {
-            return new MyFrac(this.Nom * that.Denom, this.Denom * that.Nom);
+            if (this.IsBigInteger || that.IsBigInteger)
+            {
+                BigInteger newNom = this.GetBigNom() * that.GetBigDenom();
+                BigInteger newDenom = this.GetBigDenom() * that.GetBigNom();
+                return new MyFrac(newNom, newDenom);
+            }
+            else
+            {
+                int newNom = this.Nom * that.Denom;
+                int newDenom = this.Denom * that.Nom;
+                return new MyFrac(newNom, newDenom);
+            }
         }
 
         public MyFrac Multiply(MyFrac that)
         {
-            return new MyFrac(this.Nom * that.Nom, this.Denom * that.Denom);
+            if (this.IsBigInteger || that.IsBigInteger)
+            {
+                BigInteger newNom = this.GetBigNom() * that.GetBigNom();
+                BigInteger newDenom = this.GetBigDenom() * that.GetBigDenom();
+                return new MyFrac(newNom, newDenom);
+            }
+            else
+            {
+                int newNom = this.Nom * that.Nom;
+                int newDenom = this.Denom * that.Denom;
+                return new MyFrac(newNom, newDenom);
+            }
         }
 
         public MyFrac Subtract(MyFrac that)
         {
-            int newNom = this.Nom * that.Denom - that.Nom * this.Denom;
-            int newDenom = this.Denom * that.Denom;
-            return new MyFrac(newNom, newDenom);
+            if (this.IsBigInteger || that.IsBigInteger)
+            {
+                BigInteger newNom = this.GetBigNom() * that.GetBigDenom() - that.GetBigNom() * this.GetBigDenom();
+                BigInteger newDenom = this.GetBigDenom() * that.GetBigDenom();
+                return new MyFrac(newNom, newDenom);
+            }
+            else
+            {
+                int newNom = this.Nom * that.Denom - that.Nom * this.Denom;
+                int newDenom = this.Denom * that.Denom;
+                return new MyFrac(newNom, newDenom);
+            }
         }
 
         private void Reduce()
         {
-            int gcd = GCD(Math.Abs(Nom), Math.Abs(Denom));
-            Nom /= gcd;
-            Denom /= gcd;
-
-
-            if (Denom < 0)
+            if (IsBigInteger)
             {
-                Nom = -Nom;
-                Denom = -Denom;
+                BigInteger gcd = BigInteger.GreatestCommonDivisor(BigInteger.Abs(Nom_big), BigInteger.Abs(Denom_big));
+                Nom_big /= gcd;
+                Denom_big /= gcd;
+
+                if (Denom_big < 0)
+                {
+                    Nom_big = -Nom_big;
+                    Denom_big = -Denom_big;
+                }
+            }
+            else
+            {
+                int gcd = GCD(Math.Abs(Nom), Math.Abs(Denom));
+                Nom /= gcd;
+                Denom /= gcd;
+
+                if (Denom < 0)
+                {
+                    Nom = -Nom;
+                    Denom = -Denom;
+                }
+
+                CheckAndConvertToBigInteger();
             }
         }
         private int GCD(int a, int b)
@@ -86,6 +157,8 @@ namespace ConsoleApp2
             }
             return a;
         }
+        private BigInteger GetBigNom() => IsBigInteger ? Nom_big : new BigInteger(Nom);
+        private BigInteger GetBigDenom() => IsBigInteger ? Denom_big : new BigInteger(Denom);
         public void ParseFraction(string fracStr)
         {
             string[] parts = fracStr.Split('/');
@@ -107,35 +180,35 @@ namespace ConsoleApp2
         }
         public override string ToString()
         {
-            return Denom == 1 ? Nom.ToString() : $"{Nom}/{Denom}";
+            return IsBigInteger
+                ? (Denom_big == 1 ? Nom_big.ToString() : $"{Nom_big}/{Denom_big}")
+                : (Denom == 1 ? Nom.ToString() : $"{Nom}/{Denom}");
         }
         public int CompareTo(MyFrac other)
         {
-           
-            double thisValue = (double)this.Nom / this.Denom;
-            double otherValue = (double)other.Nom / other.Denom;
+
+            BigInteger thisValue = GetBigNom() * other.GetBigDenom();
+            BigInteger otherValue = other.GetBigNom() * GetBigDenom();
 
             return thisValue.CompareTo(otherValue);
         }
-
         public override bool Equals(object obj)
         {
             if (obj is MyFrac other)
             {
-                return this.Nom == other.Nom && this.Denom == other.Denom;
+                return GetBigNom() * other.GetBigDenom() == other.GetBigNom() * GetBigDenom();
             }
             return false;
         }
 
         public override int GetHashCode()
         {
-            unchecked
-            {
-                int hash = 17;
-                hash = hash * 31 + Nom.GetHashCode();
-                hash = hash * 31 + Denom.GetHashCode();
-                return hash;
-            }
+           
+                unchecked
+                {
+                    return GetBigNom().GetHashCode() ^ GetBigDenom().GetHashCode();
+                }
+            
         }
     }
 }

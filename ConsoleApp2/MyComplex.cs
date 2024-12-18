@@ -75,5 +75,5 @@ namespace ConsoleApp2
             else
                 return $"{Re}+{Im}i";
         }
-    }
+    } 
 }

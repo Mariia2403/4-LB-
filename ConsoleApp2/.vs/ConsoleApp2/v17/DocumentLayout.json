@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\myfrac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|solutionrelative:myfrac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,18 +11,22 @@
       "RelativeMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|solutionrelative:imynumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBF81816-1663-47CC-8E03-AAD7EE21A197}|..\\UnitTestProject1\\MyFracUnitTests.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\4 \u043B\u0431\\unittestproject1\\mycalctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\mycomplex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|solutionrelative:mycomplex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4329FE64-0A97-4783-A765-9C7BB4770C46}|..\\MyComlexUnitTests\\MyComlexUnitTests.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\4 \u043B\u0431\\mycomlexunittests\\mycomplexunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|solutionrelative:tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBF81816-1663-47CC-8E03-AAD7EE21A197}|..\\UnitTestProject1\\MyFracUnitTests.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\4 \u043B\u0431\\unittestproject1\\mycalctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\mycomplex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|solutionrelative:mycomplex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59FC18BA-507D-4378-8B8C-6093153655C5}|ConsoleApp2.csproj|solutionrelative:tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,50 +36,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MyCalcTest.cs",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\UnitTestProject1\\MyCalcTest.cs",
-              "RelativeDocumentMoniker": "..\\UnitTestProject1\\MyCalcTest.cs",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\UnitTestProject1\\MyCalcTest.cs",
-              "RelativeToolTip": "..\\UnitTestProject1\\MyCalcTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T18:48:52.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MyComplexUnitTests.cs",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\MyComlexUnitTests\\MyComplexUnitTests.cs",
-              "RelativeDocumentMoniker": "..\\MyComlexUnitTests\\MyComplexUnitTests.cs",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\MyComlexUnitTests\\MyComplexUnitTests.cs",
-              "RelativeToolTip": "..\\MyComlexUnitTests\\MyComplexUnitTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T16:48:04.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Tests.cs",
               "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\Tests.cs",
               "RelativeDocumentMoniker": "Tests.cs",
               "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\Tests.cs",
               "RelativeToolTip": "Tests.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAsAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T11:29:03.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T11:29:03.425Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "IMyNumber.cs",
               "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\IMyNumber.cs",
               "RelativeDocumentMoniker": "IMyNumber.cs",
@@ -92,41 +65,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "MyComplex.cs",
               "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\MyComplex.cs",
               "RelativeDocumentMoniker": "MyComplex.cs",
               "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\MyComplex.cs",
               "RelativeToolTip": "MyComplex.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAE0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T16:02:59.439Z"
+              "WhenOpened": "2024-12-02T16:02:59.439Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MyFrac.cs",
               "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\MyFrac.cs",
               "RelativeDocumentMoniker": "MyFrac.cs",
               "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\MyFrac.cs",
               "RelativeToolTip": "MyFrac.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA7wBUAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T16:01:57.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\ConsoleApp2\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T16:01:29.37Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MyComplexUnitTests.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\MyComlexUnitTests\\MyComplexUnitTests.cs",
+              "RelativeDocumentMoniker": "..\\MyComlexUnitTests\\MyComplexUnitTests.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\MyComlexUnitTests\\MyComplexUnitTests.cs",
+              "RelativeToolTip": "..\\MyComlexUnitTests\\MyComplexUnitTests.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAA2wAcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T16:48:04.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MyCalcTest.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\UnitTestProject1\\MyCalcTest.cs",
+              "RelativeDocumentMoniker": "..\\UnitTestProject1\\MyCalcTest.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\4 \u041B\u0411\\UnitTestProject1\\MyCalcTest.cs",
+              "RelativeToolTip": "..\\UnitTestProject1\\MyCalcTest.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAIwBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T18:48:52.699Z"
             }
           ]
         }
